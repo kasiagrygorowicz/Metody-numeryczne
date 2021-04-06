@@ -1,5 +1,6 @@
-function xs = LU_decomposition(A,B,withPivoting)
-[L, U, B] = calculate_LU(A,B,withPivoting);
+% Crout-Dolittle method
+function xs = LU_decomposition(A,B)
+[L, U] = my_dolittle(A,B, false);
 %   LY = B
 Y = forward_substitution(L,B);
 %   UX = Y
