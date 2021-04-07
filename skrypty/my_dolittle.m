@@ -1,11 +1,12 @@
 % UX=Y
+% zle!!!
 function [L, U,B] = my_dolittle (A, B, withPivoting)
  n = length(A);
  L= diag(ones(n,1));
  
 %  macierz górnotrójkątna
      for i = 1:n-1
-         if withPivoting
+         if withPivoting 
              max_row = partial_pivoting(A,i);
              [A,B] = swap_rows(A,B,max_row,i);
          end

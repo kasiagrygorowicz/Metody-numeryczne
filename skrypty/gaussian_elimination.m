@@ -3,7 +3,8 @@ function xs = gaussian_elimination(A, B)
 % po kolumnach
      n = length(A);
      for i = 1:n-1
-         max_row = partial_pivoting(A,i);
+%          partial_pivoting -2 liniji
+         max_row = find_max_row_index(A,i);
          [A,B] = swap_rows(A,B,max_row,i);
 %          po rzedach
          for j = i+1:n

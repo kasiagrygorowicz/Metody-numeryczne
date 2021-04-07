@@ -1,12 +1,8 @@
 function [A,B] = swap_rows(A, B, max_absolute_row, index)
-    if max_absolute_row == 1
+    if max_absolute_row == index
         return
     end
-    tmpA = A(index,:);
-    tmpB = B(index);
-    A(index,:) = A (max_absolute_row,:);
-    B(index) = B(max_absolute_row);
-    A(max_absolute_row,:) = tmpA;
-    B(max_absolute_row) = tmpB;
     
+    B([index,max_absolute_row]) = B([max_absolute_row,index]);
+    A([max_absolute_row,index],:) = A ([index,max_absolute_row],:);   
 end

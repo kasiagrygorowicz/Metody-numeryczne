@@ -1,6 +1,6 @@
 % Crout-Dolittle method
 function xs = LU_decomposition(A,B)
-[L, U] = my_dolittle(A,B, false);
+[L, U] = dolittle_decomposition(A);
 %   LY = B
 Y = forward_substitution(L,B);
 %   UX = Y
