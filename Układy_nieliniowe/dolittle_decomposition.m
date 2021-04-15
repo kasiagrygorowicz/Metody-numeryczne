@@ -12,8 +12,9 @@ function [L, U] = dolittle_decomposition (A)
            end
            U(k, r) = A(k, r)- sum_upper;
        end
-      max_column =find_max_column_index(U,k);
-      [A,U]= swap_columns(A,U,max_column,k);
+%        PARTIAL PIVOTING
+%       max_column =find_max_column_index(U,k);
+%       [A,U]= swap_columns(A,U,max_column,k);
        for r = k+1:n
            sum_lower = 0;
            for j = 1:(k-1)
