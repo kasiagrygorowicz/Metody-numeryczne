@@ -1,6 +1,7 @@
 % Jan Konarski, Katarzyna Grygorowicz
 
 Ns = 2:2:100;
+o = @(x) x^3;
 counters = zeros(length(Ns),1);
 for i=1:length(Ns)
     n=Ns(i);
@@ -13,6 +14,10 @@ figure(1);
 plot(Ns, counters);
 xlabel('Wymiar macierzy');
 ylabel('Ilość operacji');
+hold on
+fplot(o,[0,100]);
+legend('eliminacja Gaussa','złożoność teoretyczna');
+
  
 
 function counter = gaussian_elimination_c(A, B)
@@ -27,6 +32,7 @@ function counter = gaussian_elimination_c(A, B)
          end
 %          po rzedach
          for j = i+1:n
+%              
              d = A(j,i) / A(i,i);
              counter=counter+1;
 %              po kolumnach
