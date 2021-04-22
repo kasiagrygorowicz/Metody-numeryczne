@@ -1,7 +1,7 @@
 % f -funckja
 % <a,b> - przedział izolacji pierwiastka
-% maxIt - maksymalna liczba iteracji
-function solution = bisection_method(f,a,b,iterations, epsilon)
+% iterations - maksymalna liczba iteracji
+function [solution, errors] = bisection_method(f,a,b,iterations, epsilon)
     if (f(a)*f(b) >= 0)
         error("Złe załozone wartości rozwiazania");
     end
@@ -10,7 +10,7 @@ function solution = bisection_method(f,a,b,iterations, epsilon)
     i = 1;
     solution = (a+b)/2;
     errors(1) = abs(f(solution));
-    while ( i <= iterations && abs(f(solution)) >= epsilon)
+    while ( i <= iterations && abs(f(solution)) > epsilon)
         solution = (a+b)/2;
         if f(solution)*f(a) < 0
             b = solution;
