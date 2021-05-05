@@ -9,7 +9,7 @@ for i = degrees
 end
 
 for i=1:length(results)
-    fprintf("Wynika dla rzędu %d wynosi %d\n",i,results(i));
+    fprintf("Wynika dla rzędu %d wynosi %.12f\n",i,results(i));
 end
 
-    
+        

@@ -3,21 +3,22 @@ function result = Newton_Cotes_composite(fi, h, d)
 if d <=0 || d>= 5
     error('Zły rząd');
 end
-
 n = length(fi);
-last = mod(n,(d+1));
-n = n - last;
-k = n/(d+1);
+k = round(n/d);
 result =0;
 for i=1:k
-    result =result + Newton_Cotes(fi((i-1)*(d+1)+1:i*(d+1)),h);
-    fprintf("%d\n",i);
+    s=(i-1)*(d+1)-i+2;
+    e=i*(d+1)-i+1;
+    if s >= n
+        return
+    end
+    if e > n
+        e = n;
+    end
+    result =result + Newton_Cotes(fi(s:e),h);
+end
 end
 
-if last ~= 0
-    result = result + Newton_Cotes(fi(length(fi)-last+1:length(fi)),h);
-end
-end
 
 
     

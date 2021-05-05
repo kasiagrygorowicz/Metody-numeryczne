@@ -4,6 +4,7 @@
 
 function result = Newton_Cotes (fi, h)
 % liczba elemntów
+% degree to liczba h
 degree = length(fi)-1;
     
 switch degree
