@@ -4,18 +4,18 @@
 
 function result = Newton_Cotes (fi, h)
 % liczba elemntów
-    n = length(fi);
+degree = length(fi)-1;
     
-switch n
-    case n == 1
+switch degree
+    case 0
         result = rectangle_rule(fi,h);
-    case n == 2
+    case 1
         result = trapezoidal_rule_closed(fi, h);
-    case n == 3
+    case 2
         result = simpson_rule_closed(fi,h);
-    case n == 4
+    case 3
         result = simpson_38_rule_closed(fi,h);
-    case n == 5
+    case 4
         result = boole_rule_closed(fi,h);
     otherwise
         result = NaN;
