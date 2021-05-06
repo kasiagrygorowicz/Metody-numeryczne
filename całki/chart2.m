@@ -16,6 +16,6 @@ for i=1:4
 end
 hold on
 for i=1:4
-   loglog([1:1000]', abs(2-T(i,:))); 
+   loglog([1:1000], abs(2-T(i,:))); 
 end
 legend('1 rząd', '2 rząd', '3 rząd', '4 rząd');

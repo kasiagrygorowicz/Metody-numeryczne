@@ -4,7 +4,7 @@ if d <=0 || d>= 5
     error('Zły rząd');
 end
 n = length(fi);
-k = round(n/d);
+k = ceil(n/d);
 result =0;
 for i=1:k
     s=(i-1)*(d+1)-i+2;
