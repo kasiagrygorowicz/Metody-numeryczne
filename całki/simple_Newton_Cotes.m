@@ -1,21 +1,33 @@
-function result = simple_Newton_Cotes(x,fi,d)
-if d <=0 || d>= 5
-    error('Zły rząd');
-end
-h=x(2)-x(1);
-n = length(fi);
-k = ceil(n/d);
-result =0;
-for i=1:k
-    s=(i-1)*(d+1)-i+2;
-    e=i*(d+1)-i+1;
-    if s >= n
-        return
-    end
-    if e > n
-        return
-    end
-    result =result + Newton_Cotes(fi(s:e),h);
-end
+
+% fi - wektor wartości funckji całkowanej
+% h - długość kroku całkowania
+
+function result = simple_Newton_Cotes (fi, x)
+% degree to liczba h
+h = x(2)-x(1);
+degree = length(fi)-1;
+ 
+switch degree
+    case 0
+        result = rectangle_rule(fi,h);
+    case 1
+        result = trapezoidal_rule_closed(fi, h);
+    case 2
+        result = simpson_rule_closed(fi,h);
+    case 3
+        result = simpson_38_rule_closed(fi,h);
+    case 4
+        result = boole_rule_closed(fi,h);
+    otherwise
+        result = NaN;
 end
 
+end
+
+
+        
+        
+        
+        
+        
+    

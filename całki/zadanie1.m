@@ -11,7 +11,7 @@ for m =1:4
         h = 10^(-n/10);
         x = 0 : h : m*h;
         fx = f(x);
-        l=simple_Newton_Cotes(x,fx,m);
+        l=simple_Newton_Cotes(fx,x);
         E(m,n) = abs(l-lref(0,m*h));
         H(m,n) =h;
         
@@ -19,10 +19,13 @@ for m =1:4
 end
 
 for m =1:4
-    loglog(H(m,:),E(m,:),'-o')
+    loglog(H(m,:),E(m,:),'o')
     hold on;
 end
 legend('1 rzędu', '2 rzędu','3 rzędu','4 rzędu');
+title('Wykres błędu bezwzględnego od długości kroku');
+xlabel('krok');
+ylabel('błąd bezwzględny');
 
 
 

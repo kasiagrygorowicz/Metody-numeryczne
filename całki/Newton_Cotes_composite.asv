@@ -15,7 +15,7 @@ for i=1:k
     if e > n
         e = n;
     end
-    result =result + simple_Newton_Cotes(fi(s:e),x);
+    result =result + simple_Newton_Cotes(fi(s:e),);
 end
 end
 
