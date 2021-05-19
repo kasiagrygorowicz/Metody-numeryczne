@@ -1,0 +1,9 @@
+function y = adams-bashforth_method(xs,ys,f,h)
+% rząd metody
+m = length(xs)-1;
+switch m
+    case 0
+        y = ys(1)+h*f(x(1),ys(1));
+    case 1
+        y = ys(2)+
+    
