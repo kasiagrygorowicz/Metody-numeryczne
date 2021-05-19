@@ -1,0 +1,17 @@
+function results = heun_method (h, x0, y0, x, f)
+    n = (x-x0)/h;
+    results = zeros(2,n);
+    i = 1;
+    
+    while x0 <= x
+%         rząd 1 na x
+        results(1,i) = x0;
+%         rząd 2 na y
+        results(2,i) = y0;
+        predicator_y = calculate_prediactor
+
+
+
+
+
+end

@@ -1,0 +1,9 @@
+function y1 = calculate_correction(x0,y0,x1,y1,h,f)
+    e0 = 10e-5;
+    tmp = y1
+    while abs(y1-y0)>e
+        y1 = tmp;
+        y1 = y0 + h*(f(x0,y0)+f(x1,y1))/2;
+        
+        
+    
