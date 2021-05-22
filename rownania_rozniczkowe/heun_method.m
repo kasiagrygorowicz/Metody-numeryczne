@@ -1,5 +1,5 @@
 function results = heun_method (h, x0, y0, x, f)
-   n = (x-x0)/h;
+   n = length(x0:h:x);
     results = zeros(2,n);
    i = 1;
     while i<=n+1

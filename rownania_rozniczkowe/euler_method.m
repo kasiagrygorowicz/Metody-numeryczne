@@ -1,5 +1,5 @@
 function results = euler_method (h, x0, y0, x, f)
-     n = (x-x0)/h;
+     n = ceil((x-x0)/h);
     results = zeros(2,n);
      i = 1;
     while i<=n+1
